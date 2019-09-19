@@ -3,11 +3,23 @@ import {FunctionComponent} from "react";
 
 import styles from './ProfileStyles.module.scss'
 
-import {Fon} from "./Fon";
+import {Fon} from "../../miniResourses/Fon";
 import {AvatarFull} from "./UserControl/AvatarFull";
 import {UserContentFull} from "./ProfileCenterContent/UserContentFull";
-import {NicknameTagAva} from "../../miniResourses/NicknameTagAva";
-import {AvaMini} from "../../AvaMini";
+
+import {AvaMini} from "../../miniResourses/AvaMini";
+import {MiniUser} from "../../Types";
+import {Recommended} from "./RecommendedPanel/Recommended";
+export const MiniUserConst:MiniUser={
+    id:1,
+    name:{firstName:"Ilya",lastName:"tormanov"},
+
+    tag:"@qweqfw"
+
+}
+
+
+
 
 export interface ProfileProps{
 nickname:string
@@ -21,7 +33,10 @@ export const Profile:FunctionComponent<ProfileProps>=(props)=>{
             <AvatarFull/>
 
                 <UserContentFull/>
-            <NicknameTagAva ava={<AvaMini/>} nickname={"Nikita Teluykov"} tag={"@Telqwqe"} city={"Minsk"}/>
+            <Recommended/>
+
+
+
 
 
         </div>

@@ -6,34 +6,7 @@
   border-radius: 8px;
 
 
-  .newPost_header{
-    padding-top: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    .newPost_header_left{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      align-content: center;
-      align-items: center;
-      .miniAvatar{
-        width:32px;
-        height:32px;
-        border-radius: 50%;
-      }
-      .nickname_data{
-        display: flex;
-        flex-direction: column;
 
-
-
-      }
-    }
-    .newPost_header_right{
-
-    }
-  }
   .newPost_content{
     margin-left: 3%;
     padding:10px 10px 10px 10px;

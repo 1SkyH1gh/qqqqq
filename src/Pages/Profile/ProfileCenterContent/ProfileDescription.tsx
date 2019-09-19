@@ -4,9 +4,10 @@ import styles from "./ProfileDescription.module.scss";
 import Icon from "@mdi/react";
 import {mdiLibraryMusicOutline, mdiPostOutline, mdiStarOutline} from "@mdi/js";
 
+import {MiniUserConst} from "../Profile";
+
 export interface ProfileDescriptionProps{
-    nickname:string,
-    id:string,
+
     status?:string
 }
 
@@ -15,10 +16,10 @@ export const ProfileDescription:FunctionComponent<ProfileDescriptionProps>=(prop
         <div className={styles.Profile}>
 
             <div className={styles.descriptionProfile}>
-                <div className={styles.nicknameID}>
-                    <span className={styles.nickname}>{props.nickname}</span>
-                    <span className={styles.id}>{props.id}</span>
-                </div>
+                <span className={styles.nickStatus}>
+                    <div className={styles.nickname}>ilya Tormanov</div>
+                    <div className={styles.tag}>@qwea</div>
+                </span>
 
                 <span className={styles.status}>{props.status}</span>
             </div>

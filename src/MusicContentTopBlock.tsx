@@ -1,5 +1,5 @@
 import * as React from "react";
-import {FunctionComponent} from "react";
+import {FunctionComponent, useState} from "react";
 import styles from './App.module.scss'
 import { mdiArrowLeftDropCircleOutline } from '@mdi/js';
 import { mdiPause } from '@mdi/js';
@@ -7,13 +7,17 @@ import { mdiArrowRightDropCircleOutline } from '@mdi/js';
 import { mdiMessageAlertOutline } from '@mdi/js';
 import { mdiMessagePlusOutline } from '@mdi/js';
 import Icon from '@mdi/react'
-import {AvaMini} from "./AvaMini";
+import {AvaMini} from "./miniResourses/AvaMini";
+import Popover from "react-tiny-popover";
+import {ExamplairMessage} from "./Pages/Profile/Msg/ExamplairMessage";
+import {DropdownMsg} from "./Pages/Profile/MsgDropdown/DropdownMsg";
 
 export interface MusicContentTopBlockProps {
 
 }
 
 export const MusicContentTopBlock :FunctionComponent<MusicContentTopBlockProps>=(props)=>{
+    const [open,setOpen]=useState()
     return(
         <div className={styles.music_content}>
 
@@ -31,7 +35,11 @@ export const MusicContentTopBlock :FunctionComponent<MusicContentTopBlockProps>=
                 <Icon path={mdiMessagePlusOutline} size={1} color={"#444444"}/>
             </div>
             Ilya Tormanov
-            <AvaMini/>
+            <Popover isOpen={open}
+                     position={"bottom"}
+                     content={<DropdownMsg/>} >
+              <AvaMini onClick={()=>setOpen(true)}/>
+            </Popover>
         </div>
     )
 }
